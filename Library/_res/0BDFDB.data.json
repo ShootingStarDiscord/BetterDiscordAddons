@@ -2537,7 +2537,6 @@
 		"menufocused": ["Menu", "focused"],
 		"menuhideinteraction": ["Menu", "hideInteraction"],
 		"menuhint": ["BDFDB", "menuItemHint"],
-		"menuhintcontainer": ["Menu", "hintContainer"],
 		"menuicon": ["Menu", "icon"],
 		"menuiconcontainer": ["Menu", "iconContainer"],
 		"menuiconcontainerleft": ["Menu", "iconContainerLeft"],
