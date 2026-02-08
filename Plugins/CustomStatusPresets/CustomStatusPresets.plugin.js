@@ -398,7 +398,9 @@ module.exports = (_ => {
 										})
 									]
 								}),
-								icon: !clearAfter || clearAfter == ClearAfterValues.DONT_CLEAR ? BDFDB.LanguageUtils.LanguageStrings.NEVER : clearAfter == ClearAfterValues.TODAY ? BDFDB.LanguageUtils.LanguageStrings.TODAY : BDFDB.LanguageUtils.LanguageStringsFormat("AFTER_PLACEHOLDER", `${clearAfter/3600000}h`),
+								icon: BDFDB.ReactUtils.createElement(BDFDB.LibraryComponents.MenuItems.MenuHint, {
+									hint: !clearAfter || clearAfter == ClearAfterValues.DONT_CLEAR ? BDFDB.LanguageUtils.LanguageStrings.NEVER : clearAfter == ClearAfterValues.TODAY ? BDFDB.LanguageUtils.LanguageStrings.TODAY : BDFDB.LanguageUtils.LanguageStringsFormat("AFTER_PLACEHOLDER", `${clearAfter/3600000}h`)
+								}),
 								action: _ => {
 									if (!presets[id]) return;
 									let expiresAt = clearAfter && clearAfter != ClearAfterValues.DONT_CLEAR ? clearAfter : null;
