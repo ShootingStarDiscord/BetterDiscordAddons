@@ -396,7 +396,7 @@
 	},
 	"PatchModules": {
 		"Account": {"strings": ["handleOpenSettingsContextMenu", "shouldShowSpeakingWhileMutedTooltip", "renderNameZone"]},
-		"AccountButtons": {"strings": ["handleOpenSettingsContextMenu", "shouldShowSpeakingWhileMutedTooltip", "isEligibleForPomelo"]},
+		"AccountButtons": {"strings": ["handleOpenSettingsContextMenu", "shouldShowSpeakingWhileMutedTooltip", "shouldShowOutputDeviceChangedTooltip"]},
 		"AccountPopout": {"strings": ["UserProfileAccountPopout", "ACCOUNT_POPOUT"]},
 		"AccountName": {"strings": ["accountProfilePopoutWrapper", ".avatarWrapper", "renderNameTag"]},
 		"AnalyticsContext": {"props": ["ObjectTypes", "Objects", "Pages", "Sections"]},
