@@ -2,7 +2,7 @@
  * @name OldTitleBar
  * @author DevilBro
  * @authorId 278543574059057154
- * @version 1.9.2
+ * @version 1.9.3
  * @description Allows you to switch to Discord's old Titlebar
  * @invite Jx3TjNS
  * @donate https://www.paypal.me/MircoWittrien
@@ -284,7 +284,7 @@ module.exports = (_ => {
 				if (!e.returnvalue) {
 					titleBarLeading = e.instance.props.leading;
 					titleBarTrailing = e.instance.props.trailing;
-				}
+				} else return null;
 			}
 			
 			processHeaderBarDiscovery (e) {
