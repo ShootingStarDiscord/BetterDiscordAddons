@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @name LastMessageDate
  * @author DevilBro
  * @authorId 278543574059057154
@@ -104,6 +104,7 @@ module.exports = (_ => {
 				});
 				return BDFDB.ReactUtils.createElement("section", {
 					className: BDFDB.disCN.userprofilesection,
+					onPointerDownCapture: e => { if (!e.button && channel) { e.nativeEvent.stopImmediatePropagation(); e.preventDefault(); BDFDB.LibraryModules.HistoryUtils.transitionTo(BDFDB.DiscordConstants.Routes.CHANNEL(channel.guild_id, channel.id, loadedUsers[this.props.guildId][this.props.user.id].id)); } },
 					children: [
 						BDFDB.ReactUtils.createElement(BDFDB.LibraryComponents.Heading, {
 							className: BDFDB.disCN.userprofilesectionheading,
@@ -114,7 +115,6 @@ module.exports = (_ => {
 						}),
 						BDFDB.ReactUtils.createElement(loadedUsers[this.props.guildId][this.props.user.id] ? BDFDB.LibraryComponents.Clickable : "div", {
 							className: BDFDB.disCN.membersince,
-							onClick: _ => loadedUsers[this.props.guildId][this.props.user.id] && BDFDB.LibraryModules.HistoryUtils.transitionTo(BDFDB.DiscordConstants.Routes.CHANNEL(channel.guild_id, channel.id, loadedUsers[this.props.guildId][this.props.user.id].id)),
 							children: [
 								!channel ? icon : BDFDB.ReactUtils.createElement(BDFDB.LibraryComponents.TooltipContainer, {
 									text: channel.guild_id ? "#" + channel.name : BDFDB.LanguageUtils.LanguageStrings.DIRECT_MESSAGES,
@@ -237,7 +237,7 @@ module.exports = (_ => {
 
 			processUserThemeContainer (e) {
 				let popout = {props: e.instance.props.value || e.instance.props};
-				if (popout.props.layout == "POPOUT") currentPopout = popout;
+				if (popout.props.layout == "POPOUT" || popout.props.layout == "SIDEBAR") currentPopout = popout;
 				if (popout.props.layout == "MODAL" || popout.props.layout == "MODAL_V2") currentProfile = popout;
 			}
 
