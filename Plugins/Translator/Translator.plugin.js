@@ -2,7 +2,7 @@
  * @name Translator
  * @author DevilBro
  * @authorId 278543574059057154
- * @version 2.8.1
+ * @version 2.8.2
  * @description Allows you to translate incoming and your outgoing Messages within Discord
  * @invite Jx3TjNS
  * @donate https://www.paypal.me/MircoWittrien
@@ -463,7 +463,7 @@ module.exports = (_ => {
 					delete translatedMessages[e.methodArguments[1]];
 					delete oldMessages[e.methodArguments[1]];
 				}});
-				BDFDB.PatchUtils.patch(this, BDFDB.LibraryModules.MessageUtils, "sendMessage", {instead: e2 => {
+				BDFDB.PatchUtils.patch(this, BDFDB.LibraryModules.MessageUtils, "_sendMessage", {instead: e2 => {
 					const args = e2.methodArguments, msg = args[1], text = msg && msg.content;
 					const match = text && ((this.settings.prefixes || {}).translationPrefixData || []).find(p => text.trim().startsWith(p.prefix));
 					if (!text || (!match && !this.isTranslationEnabled(args[0]))) return e2.callOriginalMethodAfterwards();
