@@ -573,13 +573,6 @@ img:not([src]), img[src=""], img[src="null"] {
 	background-color: var(--background-base-low);
 	border-bottom: 1px solid var(--background-modifier-accent);
 }
-[REPLACE_CLASS_table] [REPLACE_CLASS_tablestickyheader] {
-	position: sticky;
-	width: 100%;
-}
-[REPLACE_CLASS_modalsub] [REPLACE_CLASS_table] [REPLACE_CLASS_tablestickyheader]:first-child {
-	padding-left: 20px;
-}
 [REPLACE_CLASS_tableheadercell] {
 	color: var(--text-subtle);
 	font-size: 12px;
@@ -600,15 +593,12 @@ img:not([src]), img[src=""], img[src="null"] {
 [REPLACE_CLASS_tableheadercellsorted] {
 	color: var(--text-subtle);
 }
-[REPLACE_CLASS_table] [REPLACE_CLASS_tablerow] {
-	position: relative;
-	display: flex;
-	margin-bottom: 5px;
-	align-items: center;
-	color: var(--text-subtle);
+[REPLACE_CLASS_tableheadercellclickable] {
+	cursor: pointer;
 }
-[REPLACE_CLASS_tablebodycell] {
-	font-size: 15px;
+[REPLACE_CLASS_tableheadercellcontent] {
+	display: flex;
+	align-items: center;
 }
 
 [REPLACE_CLASS_settingstableheaders] {
