@@ -1334,6 +1334,7 @@
 	},
 	"LazyloadedClassModules": {
 		"ChannelSettings": "_0511a",
+		"ColorPicker": "_459fb",
 		"ColorPickerInner": "_889ee",
 		"CustomStatusModalWithPreview": "dbc4b7",
 		"ForumPage": "f369db",
@@ -1533,7 +1534,7 @@
 		"NitroStore": {"props": ["applicationStore", "marketingHeader"]},
 		"NoteTextarea": {"props": ["textarea"], "length": 1},
 		"Notice": {"props": ["notice", "colorStreamerMode"]},
-		"NoticePlatform": {"props": ["iconAndroid", "textLinkSmall"]},
+		"NoticePlatform": {"props": ["iconAndroid", "textLink"]},
 		"PageImage": {"props": ["title", "image", "wrapper", "text"], "length": 5, "smaller": true},
 		"Pagination": {"props": ["activeButton", "pageControl"]},
 		"PeopleItem": {"props": ["peopleListItem", "active"]},
