@@ -593,7 +593,7 @@ module.exports = (_ => {
 			}
 			
 			processUserHeaderUsername (e) {
-				let themeType = BDFDB.ObjectUtils.get(e.instance, "props.tags.props.themeType");
+				let themeType = BDFDB.ObjectUtils.get(e.instance, "props.trailing.props.themeType");
 				if (!e.instance.props.user || !changedUsers[e.instance.props.user.id] || themeType == "SIDEBAR" && !this.settings.places.userPanel || themeType == "POPOUT" && !this.settings.places.userPopout || (themeType == "MODAL" || themeType == "MODAL_V2") && !this.settings.places.userProfile) return;
 				let data = changedUsers[e.instance.props.user.id];
 				if (!e.returnvalue) {
