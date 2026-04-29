@@ -459,7 +459,7 @@
 		"FolderHeader": {"strings": ["folderNode:", "disableWrapper", "FOLDER_SIZE"]},
 		"FolderContextMenu": {"strings": ["GUILD_ACTIONS_MENU_LABEL", "navId:\"guild", "folderId:"], "noSearch": true},
 		"FolderIcon": {"strings": ["folderNode:", "hovered:", "color:\"currentColor\""], "noSearch": true},
-		"FolderIconWrapper": {"strings": ["folderNode:", "treeitem", "isMentionLow"]},
+		"FolderIconWrapper": {"strings": ["folderNode:", "treeitem", "isMentionLow"], "noSearch": true},
 		"FolderItem": {"strings": ["folderNode:", "--custom-folder-color"]},
 		"FolderItemWrapper": {"strings": ["folderNode:", "isFolderExpanded", "defaultFolderName:"]},
 		"FolderSettingsModal": {"strings": [".handleNameChange", ".handleSubmit", "folderName:"], "noSearch": true},
