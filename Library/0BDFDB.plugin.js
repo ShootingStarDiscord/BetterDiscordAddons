@@ -2,7 +2,7 @@
  * @name BDFDB
  * @author DevilBro
  * @authorId 278543574059057154
- * @version 4.5.0
+ * @version 4.5.1
  * @description Required Library for DevilBro's Plugins
  * @invite Jx3TjNS
  * @donate https://www.paypal.me/MircoWittrien
@@ -7171,15 +7171,6 @@ module.exports = (_ => {
 					}
 				};
 				
-				CustomComponents.Scrollers = new Proxy({}, {
-					get: function (_, item) {
-						if (item == "AUTO") return BDFDB.ReactUtils.hookCall(Internal.LibraryComponents.ScrollerBase, [BDFDB.disCN.scrollerauto, BDFDB.disCN.scrollerfade, BDFDB.disCN.scrollercustomtheme]);
-						else if (item == "Thin") return BDFDB.ReactUtils.hookCall(Internal.LibraryComponents.ScrollerBase, [BDFDB.disCN.scrollerthin, BDFDB.disCN.scrollerfade, BDFDB.disCN.scrollercustomtheme]);
-						else if (item == "None") return BDFDB.ReactUtils.hookCall(Internal.LibraryComponents.ScrollerBase, [BDFDB.disCN.scrollernone, BDFDB.disCN.scrollerfade, BDFDB.disCN.scrollercustomtheme]);
-						else return "div";
-					}
-				});
-				
 				CustomComponents.SearchBar = reactInitialized && class BDFDB_SearchBar extends Internal.LibraryModules.React.Component {
 					handleChange(query) {
 						this.props.query = query;
@@ -8342,6 +8333,21 @@ module.exports = (_ => {
 						if (RealMenuItems[item]) return RealMenuItems[item];
 						if (MappedMenuItems[item] && RealMenuItems[MappedMenuItems[item]]) return RealMenuItems[MappedMenuItems[item]];
 						return null;
+					}
+				});
+				
+				const ScrollerTypes = {};
+				for (let type of Object.keys(Internal.LibraryComponents.Scrollers)) {
+					let scroller = BDFDB.ReactUtils.hookCall(Internal.LibraryComponents.Scrollers[type].render || Internal.LibraryComponents.Scrollers[type], []);
+					if (scroller && scroller.props && scroller.props.className) {
+						if (scroller.props.className.indexOf(BDFDB.disCN.scrollernone) > -1) ScrollerTypes.None = Internal.LibraryComponents.Scrollers[type];
+						if (scroller.props.className.indexOf(BDFDB.disCN.scrollerauto) > -1) ScrollerTypes.Auto = Internal.LibraryComponents.Scrollers[type];
+						if (scroller.props.className.indexOf(BDFDB.disCN.scrollerthin) > -1) ScrollerTypes.Thin = Internal.LibraryComponents.Scrollers[type];
+					}
+				}
+				LibraryComponents.Scrollers = new Proxy(ScrollerTypes, {
+					get: function (_, item) {
+						return ScrollerTypes[item] || "div";
 					}
 				});
 				
