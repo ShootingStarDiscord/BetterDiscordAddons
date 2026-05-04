@@ -2,7 +2,7 @@
  * @name BDFDB
  * @author DevilBro
  * @authorId 278543574059057154
- * @version 4.5.1
+ * @version 4.5.2
  * @description Required Library for DevilBro's Plugins
  * @invite Jx3TjNS
  * @donate https://www.paypal.me/MircoWittrien
@@ -1358,9 +1358,9 @@ module.exports = (_ => {
 								else return defaultExport ? req.c[i].exports : req.c[i];
 							}
 							if (!req.c[i] && onlySearchUnloaded && filter(m)) {
-								const resolved = {}, resolved2 = {};
-								m(resolved, resolved2, req);
-								const trueResolved = resolved2 && BDFDB.ObjectUtils.isEmpty(resolved2) ? resolved : resolved2;
+								req(i);
+								const resolved = req.c[i];
+								const trueResolved = resolved.exports && BDFDB.ObjectUtils.isEmpty(resolved.exports) ? resolved : resolved.exports;
 								if (all) found.push(defaultExport ? trueResolved.exports : trueResolved);
 								else return defaultExport ? trueResolved.exports : trueResolved;
 							}
